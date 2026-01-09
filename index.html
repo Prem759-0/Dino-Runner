@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Runner Advanced</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-mode"> <!-- Start in light mode -->
+
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+
+        <div id="ui-layer">
+            <div class="score-container">
+                <span id="score">Score: 0</span> <br>
+                <span id="high-score">HI: 0</span>
+            </div>
+
+            <div id="start-screen" class="start-screen">
+                <h1>DINO RUNNER</h1>
+                <p>Press Space to Start</p>
+                <p><small>Arrow Up to Jump | Arrow Down to Duck</small></p>
+            </div>
+
+            <div id="game-over-screen" class="game-over-screen hidden">
+                <h1>GAME OVER</h1>
+                <button onclick="location.reload()">RETRY</button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="main-footer">
+        Created by <a href="https://github.com/Prem759-0" target="_blank">Prem759-0</a>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
