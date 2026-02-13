@@ -6,16 +6,16 @@
 <title>Dino Runner Advanced</title>
 <link rel="stylesheet" href="style.css">
 
-<!-- ================= GOOGLE ADSENSE ================= -->
-<script async 
+<!-- ========== GOOGLE ADSENSE SCRIPT ========== -->
+<script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7266471355901226"
 crossorigin="anonymous"></script>
-<!-- ================================================== -->
+<!-- =========================================== -->
 
 <style>
 body {
     margin: 0;
-    padding-bottom: 270px;
+    padding-bottom: 270px; /* space for mobile sticky ad */
 }
 
 /* Desktop banner */
@@ -24,7 +24,7 @@ body {
     margin: 15px 0;
 }
 
-/* Sticky mobile banner */
+/* Sticky mobile ad */
 .mobile-sticky-ad {
     position: fixed;
     bottom: 0;
@@ -32,7 +32,7 @@ body {
     text-align: center;
     background: #fff;
     z-index: 9999;
-    padding: 5px 0;
+    padding: 10px 0;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
 }
 
@@ -46,46 +46,21 @@ body {
     }
 }
 </style>
-
-<!-- ========== SOFT DELAY POP (LESS RISK) ========== -->
-<script>
-let popLoaded = false;
-
-function loadPop() {
-    if (popLoaded) return;
-    popLoaded = true;
-
-    var s = document.createElement("script");
-    s.src = "https://pl28706088.effectivegatecpm.com/1f/33/e2/1f33e2454697dc64e756f7d53ef94fd9.js";
-    s.async = true;
-    document.head.appendChild(s);
-}
-
-/* Delay 12 seconds for better UX */
-setTimeout(loadPop, 12000);
-</script>
-<!-- ================================================ -->
-
 </head>
 
 <body class="light-mode">
 
-<!-- ===== DESKTOP BANNER ===== -->
+<!-- ===== DESKTOP ADSENSE 728x90 ===== -->
 <div class="top-ad">
-<script>
-if (window.innerWidth >= 768) {
-    atOptions = {
-        'key' : '5cad5ac5a0022e395052fdaf396a6d45',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-    };
-    document.write('<script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"><\/script>');
-}
-</script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-7266471355901226"
+         data-ad-slot="YOUR_DESKTOP_SLOT_ID"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </div>
-<!-- ================================= -->
+<!-- ================================== -->
 
 <div id="game-container">
     <canvas id="game-canvas"></canvas>
@@ -109,22 +84,17 @@ if (window.innerWidth >= 768) {
     </div>
 </div>
 
-<!-- ===== MOBILE STICKY BANNER ===== -->
+<!-- ===== MOBILE ADSENSE 300x250 STICKY ===== -->
 <div class="mobile-sticky-ad">
-<script>
-if (window.innerWidth < 768) {
-    atOptions = {
-        'key' : '5cad5ac5a0022e395052fdaf396a6d45',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-    };
-    document.write('<script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"><\/script>');
-}
-</script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:250px"
+         data-ad-client="ca-pub-7266471355901226"
+         data-ad-slot="YOUR_MOBILE_SLOT_ID"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </div>
-<!-- ================================= -->
+<!-- ========================================= -->
 
 <footer id="main-footer">
     Created by <a href="https://github.com/Prem759-0" target="_blank">Prem759-0</a>
