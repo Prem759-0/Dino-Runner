@@ -6,56 +6,60 @@
     <title>Dino Runner Advanced</title>
     <link rel="stylesheet" href="style.css">
 
+    <!-- ===== DELAYED POPUNDER (Better UX) ===== -->
+    <script>
+        setTimeout(function() {
+            var s = document.createElement("script");
+            s.src = "https://pl28706088.effectivegatecpm.com/1f/33/e2/1f33e2454697dc64e756f7d53ef94fd9.js";
+            s.async = true;
+            document.head.appendChild(s);
+        }, 5000); // 5 second delay
+    </script>
+    <!-- ======================================== -->
+
     <style>
-        .ad-container {
+        .top-ad {
             text-align: center;
             margin: 15px 0;
         }
 
-        #desktop-ad { display: block; }
-        #mobile-ad { display: none; }
+        .mobile-sticky-ad {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background: #fff;
+            z-index: 9999;
+            padding: 5px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
 
-        @media (max-width: 768px) {
-            #desktop-ad { display: none; }
-            #mobile-ad { display: block; }
+        @media (min-width: 768px) {
+            .mobile-sticky-ad {
+                display: none;
+            }
         }
     </style>
-
 </head>
 
 <body class="light-mode">
 
-    <!-- ================= RESPONSIVE BANNER ================= -->
-
-    <!-- Desktop 728x90 -->
-    <div class="ad-container" id="desktop-ad">
-        <script type="text/javascript">
-            atOptions = {
-                'key' : '5cad5ac5a0022e395052fdaf396a6d45',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-            };
+    <!-- ===== DESKTOP BANNER ===== -->
+    <div class="top-ad">
+        <script>
+            if (window.innerWidth >= 768) {
+                atOptions = {
+                    'key' : '5cad5ac5a0022e395052fdaf396a6d45',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+                document.write('<script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"><\/script>');
+            }
         </script>
-        <script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"></script>
     </div>
-
-    <!-- Mobile 300x250 -->
-    <div class="ad-container" id="mobile-ad">
-        <script type="text/javascript">
-            atOptions = {
-                'key' : '5cad5ac5a0022e395052fdaf396a6d45',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-            };
-        </script>
-        <script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"></script>
-    </div>
-
-    <!-- ===================================================== -->
+    <!-- ========================== -->
 
 
     <div id="game-container">
@@ -63,7 +67,7 @@
 
         <div id="ui-layer">
             <div class="score-container">
-                <span id="score">Score: 0</span><br>
+                <span id="score">Score: 0</span> <br>
                 <span id="high-score">HI: 0</span>
             </div>
 
@@ -80,22 +84,26 @@
         </div>
     </div>
 
+    <!-- ===== MOBILE STICKY BANNER (High Visibility) ===== -->
+    <div class="mobile-sticky-ad">
+        <script>
+            if (window.innerWidth < 768) {
+                atOptions = {
+                    'key' : '5cad5ac5a0022e395052fdaf396a6d45',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+                document.write('<script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"><\/script>');
+            }
+        </script>
+    </div>
+    <!-- =================================================== -->
+
     <footer id="main-footer">
         Created by <a href="https://github.com/Prem759-0" target="_blank">Prem759-0</a>
     </footer>
-
-
-    <!-- ================= DELAYED POPUNDER ================= -->
-    <script>
-        setTimeout(function() {
-            var pop = document.createElement('script');
-            pop.src = "https://pl28706088.effectivegatecpm.com/1f/33/e2/1f33e2454697dc64e756f7d53ef94fd9.js";
-            pop.async = true;
-            document.body.appendChild(pop);
-        }, 8000); // 8 second delay
-    </script>
-    <!-- ==================================================== -->
-
 
     <script type="module" src="script.js"></script>
 
