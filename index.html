@@ -6,10 +6,16 @@
 <title>Dino Runner Advanced</title>
 <link rel="stylesheet" href="style.css">
 
+<!-- ================= GOOGLE ADSENSE ================= -->
+<script async 
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7266471355901226"
+crossorigin="anonymous"></script>
+<!-- ================================================== -->
+
 <style>
 body {
     margin: 0;
-    padding-bottom: 270px; /* space for sticky mobile ad */
+    padding-bottom: 270px;
 }
 
 /* Desktop banner */
@@ -41,7 +47,7 @@ body {
 }
 </style>
 
-<!-- ================= SMART POP SYSTEM ================= -->
+<!-- ========== SOFT DELAY POP (LESS RISK) ========== -->
 <script>
 let popLoaded = false;
 
@@ -55,21 +61,16 @@ function loadPop() {
     document.head.appendChild(s);
 }
 
-/* 1️⃣ Fire on first click */
-document.addEventListener("click", function() {
-    loadPop();
-}, { once: true });
-
-/* 2️⃣ Backup delay (8 seconds) */
-setTimeout(loadPop, 8000);
+/* Delay 12 seconds for better UX */
+setTimeout(loadPop, 12000);
 </script>
-<!-- ==================================================== -->
+<!-- ================================================ -->
 
 </head>
 
 <body class="light-mode">
 
-<!-- ===== DESKTOP TOP BANNER ===== -->
+<!-- ===== DESKTOP BANNER ===== -->
 <div class="top-ad">
 <script>
 if (window.innerWidth >= 768) {
@@ -130,19 +131,6 @@ if (window.innerWidth < 768) {
 </footer>
 
 <script type="module" src="script.js"></script>
-
-<!-- ===== EXTRA POP AFTER GAME OVER ===== -->
-<script>
-const observer = new MutationObserver(function(mutations) {
-    const gameOver = document.getElementById("game-over-screen");
-    if (!gameOver.classList.contains("hidden")) {
-        loadPop(); // trigger second monetization
-    }
-});
-
-observer.observe(document.body, { subtree: true, attributes: true });
-</script>
-<!-- ===================================== -->
 
 </body>
 </html>
