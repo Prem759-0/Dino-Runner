@@ -1,111 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dino Runner Advanced</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dino Runner Advanced</title>
+<link rel="stylesheet" href="style.css">
 
-    <!-- ===== DELAYED POPUNDER (Better UX) ===== -->
-    <script>
-        setTimeout(function() {
-            var s = document.createElement("script");
-            s.src = "https://pl28706088.effectivegatecpm.com/1f/33/e2/1f33e2454697dc64e756f7d53ef94fd9.js";
-            s.async = true;
-            document.head.appendChild(s);
-        }, 5000); // 5 second delay
-    </script>
-    <!-- ======================================== -->
+<style>
+body {
+    margin: 0;
+    padding-bottom: 270px; /* space for sticky mobile ad */
+}
 
-    <style>
-        .top-ad {
-            text-align: center;
-            margin: 15px 0;
-        }
+/* Desktop banner */
+.top-ad {
+    text-align: center;
+    margin: 15px 0;
+}
 
-        .mobile-sticky-ad {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            background: #fff;
-            z-index: 9999;
-            padding: 5px 0;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-        }
+/* Sticky mobile banner */
+.mobile-sticky-ad {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    z-index: 9999;
+    padding: 5px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+}
 
-        @media (min-width: 768px) {
-            .mobile-sticky-ad {
-                display: none;
-            }
-        }
-    </style>
+/* Hide sticky on desktop */
+@media (min-width: 768px) {
+    .mobile-sticky-ad {
+        display: none;
+    }
+    body {
+        padding-bottom: 0;
+    }
+}
+</style>
+
+<!-- ================= SMART POP SYSTEM ================= -->
+<script>
+let popLoaded = false;
+
+function loadPop() {
+    if (popLoaded) return;
+    popLoaded = true;
+
+    var s = document.createElement("script");
+    s.src = "https://pl28706088.effectivegatecpm.com/1f/33/e2/1f33e2454697dc64e756f7d53ef94fd9.js";
+    s.async = true;
+    document.head.appendChild(s);
+}
+
+/* 1️⃣ Fire on first click */
+document.addEventListener("click", function() {
+    loadPop();
+}, { once: true });
+
+/* 2️⃣ Backup delay (8 seconds) */
+setTimeout(loadPop, 8000);
+</script>
+<!-- ==================================================== -->
+
 </head>
 
 <body class="light-mode">
 
-    <!-- ===== DESKTOP BANNER ===== -->
-    <div class="top-ad">
-        <script>
-            if (window.innerWidth >= 768) {
-                atOptions = {
-                    'key' : '5cad5ac5a0022e395052fdaf396a6d45',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                };
-                document.write('<script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"><\/script>');
-            }
-        </script>
-    </div>
-    <!-- ========================== -->
+<!-- ===== DESKTOP TOP BANNER ===== -->
+<div class="top-ad">
+<script>
+if (window.innerWidth >= 768) {
+    atOptions = {
+        'key' : '5cad5ac5a0022e395052fdaf396a6d45',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+    };
+    document.write('<script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"><\/script>');
+}
+</script>
+</div>
+<!-- ================================= -->
 
+<div id="game-container">
+    <canvas id="game-canvas"></canvas>
 
-    <div id="game-container">
-        <canvas id="game-canvas"></canvas>
+    <div id="ui-layer">
+        <div class="score-container">
+            <span id="score">Score: 0</span><br>
+            <span id="high-score">HI: 0</span>
+        </div>
 
-        <div id="ui-layer">
-            <div class="score-container">
-                <span id="score">Score: 0</span> <br>
-                <span id="high-score">HI: 0</span>
-            </div>
+        <div id="start-screen" class="start-screen">
+            <h1>DINO RUNNER</h1>
+            <p>Press Space to Start</p>
+            <p><small>Arrow Up to Jump | Arrow Down to Duck</small></p>
+        </div>
 
-            <div id="start-screen" class="start-screen">
-                <h1>DINO RUNNER</h1>
-                <p>Press Space to Start</p>
-                <p><small>Arrow Up to Jump | Arrow Down to Duck</small></p>
-            </div>
-
-            <div id="game-over-screen" class="game-over-screen hidden">
-                <h1>GAME OVER</h1>
-                <button onclick="location.reload()">RETRY</button>
-            </div>
+        <div id="game-over-screen" class="game-over-screen hidden">
+            <h1>GAME OVER</h1>
+            <button onclick="location.reload()">RETRY</button>
         </div>
     </div>
+</div>
 
-    <!-- ===== MOBILE STICKY BANNER (High Visibility) ===== -->
-    <div class="mobile-sticky-ad">
-        <script>
-            if (window.innerWidth < 768) {
-                atOptions = {
-                    'key' : '5cad5ac5a0022e395052fdaf396a6d45',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
-                document.write('<script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"><\/script>');
-            }
-        </script>
-    </div>
-    <!-- =================================================== -->
+<!-- ===== MOBILE STICKY BANNER ===== -->
+<div class="mobile-sticky-ad">
+<script>
+if (window.innerWidth < 768) {
+    atOptions = {
+        'key' : '5cad5ac5a0022e395052fdaf396a6d45',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+    };
+    document.write('<script src="https://www.highperformanceformat.com/5cad5ac5a0022e395052fdaf396a6d45/invoke.js"><\/script>');
+}
+</script>
+</div>
+<!-- ================================= -->
 
-    <footer id="main-footer">
-        Created by <a href="https://github.com/Prem759-0" target="_blank">Prem759-0</a>
-    </footer>
+<footer id="main-footer">
+    Created by <a href="https://github.com/Prem759-0" target="_blank">Prem759-0</a>
+</footer>
 
-    <script type="module" src="script.js"></script>
+<script type="module" src="script.js"></script>
+
+<!-- ===== EXTRA POP AFTER GAME OVER ===== -->
+<script>
+const observer = new MutationObserver(function(mutations) {
+    const gameOver = document.getElementById("game-over-screen");
+    if (!gameOver.classList.contains("hidden")) {
+        loadPop(); // trigger second monetization
+    }
+});
+
+observer.observe(document.body, { subtree: true, attributes: true });
+</script>
+<!-- ===================================== -->
 
 </body>
 </html>
